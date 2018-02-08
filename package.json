@@ -7,6 +7,7 @@
     "initp": "npm install --save-dev browser-sync && npm install --save-dev autoprefixer-cli && npm install --save-dev globstar && npm install --save-dev node-sass && npm install --save-dev npm-run-all && npm install --save-dev nu-html-checker && npm install --save-dev onchange && npm install --save-dev jshint",
     "test": "npm run test:html",
     "test:html": "globstar nu-html-checker *.html",
+    "test:js": "jshint js/",
     "check": "npm run sync:browsersync",
     "check:browsersync": "node_modules/.bin/browser-sync start --server --files 'css/*.css' '*.html'",
     "build": "npm run build:sass && npm run build:autoprefixer && npm run test",
@@ -19,8 +20,8 @@
     "check:sass": "node-sass --output-style expanded --source-map true -o css sass",
     "check:autoprefixer": "autoprefixer-cli  css/style.css",
     "sync": "node_modules/.bin/browser-sync start --server --files 'css/*.css' '*.html'",
-    "syncjs": "node_modules/.bin/browser-sync start --server --files 'css/*.css' '*.html''js/*.js'",
-    "test:js": "jshint 'js/scripts.js'"
+    "syncjs": "node_modules/.bin/browser-sync start --server --files 'css/*.css' '*.html''js/*.js'"
+    
   },
   "repository": {
     "type": "git",
